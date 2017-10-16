@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>点击div，显示其innerHTML</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+			font-family: "宋体";
+		}
+		div{
+			text-align: left;
+			text-indent:2em;
+			margin: 20px auto;
+			width: 500px;
+			padding: 10px;
+			border: 2px solid #FF6666;
+			cursor: pointer;
+		}
+		#yuan{
+			width: 50px;
+			height: 100px;
+			border-radius: 50px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div><strong>【环球网军事9月12日报道】</strong>台军近日闹剧频生，继大批导弹因即将过期被迫突击发射后，昨日又在一艘成功级护卫舰上演了危险一幕，一枚导弹在装卸时不慎滑落甲板，造成弹头及尾翼损伤。
+	</div>
+	<div>据据《联合早报》网站9月12日报道，台湾海军舰队指挥部今天(12日)上午表示，海军146舰队子仪军舰昨日下午3时许，在马公测天岛码头执行标准一型导弹卸弹作业，其中一枚导弹吊载时不慎滑落甲板，造成 <strong>导弹弹头及尾翼损伤 ，</strong>无人员伤损，肇发原因现正调查处理中，初步研判可自行修复，更换零附件后可正常使用。
+	</div>
+	<div>海军舰队指挥部强调，该部所属单位执行卸弹作业前，均要求作业人员依标准作业程序完成相关检整。针对此次子仪军舰导弹滑落受损事件，将详实调查原因，检讨疏失责任，以落实风险管控，避免类案再生。
+	</div>
+	<div>据称，在标准一型导弹滑落的时候，在甲板上的操作官兵个个都受到惊吓，第一时间就是赶快跑开，等到认为不会有爆炸危险时，就立即进行后续的处理。
+	</div>
+	<div>标准一型防空导弹是台湾海军舰艇使用的舰队区域防空导弹，专门攻击来犯敌机，目前配备在成功级军舰上，该型导弹重量为625公斤，弹体长4.47公尺，飞行速度为2马赫，射程为37公里，每枚造价为40万2500元美金。海军已规划对标一导弹进行汰旧换新。
+	</div>
+	<div>此前，因为导弹快要过期，台军不得不决定在9月演习中射掉150多枚。据海外网早前报道，台军在9月的大规模实弹训练中，除台军陆航部队将射56枚“地狱火”导弹、8枚“刺针”导弹外，还将进行120枚“拖式”导弹的对海射击。
+	</div>
+	<div id="yuan">111</div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var div =document.getElementsByTagName("div");
+			for (var i = 0; i < div.length; i++) {
+				div[i].onclick = function(){
+					alert(this.innerHTML);
+				}
+			}
+		}
+	</script>
+</body>
+</html>
+

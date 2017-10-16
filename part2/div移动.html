@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div移动</title>
+	<style>
+		*{margin: 0;padding: 0;
+		}
+		.roll{
+			width: 800px;
+			margin: 0 auto;
+		}
+		#div1{width: 660px;height: 200px;background-color: #888;position: relative;left: 0;overflow: hidden;
+		}
+		#div1 ul{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#div1 li{
+			list-style-type: none;
+			width: 200px;
+			height: 200px;
+			float: left;
+			text-align: center;
+		}
+		#div1 img{
+			width: 200px;
+			height: 200px;
+			margin-right: 10px;
+		}
+			
+	</style>
+</head>
+<body>
+	<input id="btn1" type="button" value="向左移动">
+	<div class="roll">
+		<div id="div1">
+		<ul>
+			<li><img src="../images/1.gif" alt="动图1"></li>
+			<li><img src="../images/2.gif" alt="动图2"></li>
+			<li><img src="../images/3.gif" alt="动图3"></li>
+			<li><img src="../images/4.gif" alt="动图4"></li>
+		</ul>
+		</div>
+	</div>
+	
+	<input id="btn2" type="button" value="向右移动">
+
+
+
+	<script>
+		window.onload = function(){
+		var oDiv1 = document.getElementById('div1');
+		var oUl = oDiv1.getElementsByTagName('ul')[0];
+		var oBtn = document.getElementById('btn1');
+		var oBtn2 = document.getElementById('btn2');
+		var oSpeed = 2;
+		var time = 20;
+		var timer = null;
+		clearInterval(timer);
+
+		oBtn.onmouseover = function(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				oUl.style.left =  oUl.offsetLeft-oSpeed+'px';	
+			},time);
+		};
+		oBtn2.onmouseover = function(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				oUl.style.left =  oUl.offsetLeft+oSpeed+'px';	
+			},time);
+		};
+		oDiv1.onmouseover = function(){
+			clearInterval(timer);
+		}
+		oDiv1.onmouseout = function(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				oDiv1.style.left =  oDiv1.offsetLeft+oSpeed+'px';	
+			},time);
+		}
+
+	}
+	
+	</script>
+</body>
+</html>

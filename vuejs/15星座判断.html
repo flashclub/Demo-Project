@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15星座判断</title>
+	<style>
+		*{margin: 0;padding: 0}
+		.search-box{
+			width: 500px;
+			height: 50px;
+			margin: 100px auto 0;
+			border: 1px solid red;
+			background-color: pink;
+			text-align: center;
+			line-height: 50px;
+		}
+		.xingzuo-detail{
+			text-align: center;
+		}
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<div class="search-box">
+			<input type="text" id="xingzuo" v-model="xingzuoming">
+			<input type="button" value="确定" @click="query">
+		</div>
+		<div class="xingzuo-detail" v-html="xingzuodetail"></div>
+	</div>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				xingzuoming:'',
+				xingzuodetail:'',
+
+			},
+			methods:{
+				query:function() {
+					switch(this.xingzuoming) {
+						case '水瓶座':this.xingzuodetail="<img src='images/shuiping.jpg'>";break;
+						case '金牛座':this.xingzuodetail="<img src='images/jinniu.jpg'>";break;
+						case '巨蟹座':this.xingzuodetail="<img src='images/juxie.jpg'>";break;
+						case '天秤座':this.xingzuodetail="<img src='images/tiancheng.jpg'>";break;
+						case '摩羯座':this.xingzuodetail="<img src='images/mojie.jpg'>";break;
+						case '处女座':this.xingzuodetail="<img src='images/chunv.jpg'>";break;
+						case '狮子座':this.xingzuodetail="<img src='images/shizi.jpg'>";break;
+						case '天蝎座':this.xingzuodetail="<img src='images/tianxie.jpg'>";break;
+						case '双鱼座':this.xingzuodetail="<img src='images/shuangyu.jpg'>";break;
+						case '白羊座':this.xingzuodetail="<img src='images/baiyang.jpg'>";break;
+						case '双子座':this.xingzuodetail="<img src='images/shuangzi.jpg'>";break;
+						case '射手座':this.xingzuodetail="<img src='images/sheshou.jpg'>";break;
+						default:this.xingzuodetail="请输入正确的星座，例如：金牛座，狮子座等";
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

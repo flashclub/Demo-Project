@@ -1,0 +1,15 @@
+*{
+	font-family: "微软雅黑";
+}
+.btn{
+	width: 400px;
+	text-align: center;
+	margin: 0 auto;
+}
+.blank{
+	width: 200px;
+	height: 200px;
+	margin: 20px auto;
+	background-color: #000;
+	color: #FFF;
+}

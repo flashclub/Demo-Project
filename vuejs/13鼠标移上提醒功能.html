@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		fieldset{
+			width: 230px;
+			padding: 30px;
+			margin: 100px auto;
+		}
+		fieldset p {
+			line-height: 40px;	
+		}
+		fieldset label{
+			font-size: 12px;
+			color: #ccc;
+			line-height: 12px;
+		}
+		fieldset input[type="button"]{
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		#demo{
+			position: relative;
+		}
+		fieldset span{
+			width: 190px;
+			line-height: 20px;
+			padding:5px;
+			position:absolute;
+			top:30px;
+			left:0;
+			border:1px solid #ccc;
+			background-color: #eee;
+		}
+		
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<fieldset>
+		<form action="">
+			<p>邮箱<input type="text"></p>
+			<p>密码<input type="passworld"></p>
+			<p id="demo" v-on:mouseenter="visible" @mouseleave="invisible">
+				<label ><input type="checkbox"/>十天免登陆</label>
+				<span v-show="seen">为了您的信息安全，请不要在公共场所使用此功能</span>
+			</p>
+
+			<p><input type="button" value="登录" /> <input type="button" value="注册" /></p>
+		</form>
+	</fieldset>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				seen:false,
+			},
+			methods:{
+				visible:function() {
+					this.seen = true;
+				},
+				invisible:function() {
+					this.seen = false;
+				}
+
+			}
+		})
+	</script>
+</body>
+</html>

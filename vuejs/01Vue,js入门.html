@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.js"></script>
+	
+</head>
+<body>
+<h1 id="demo">{{name}}，欢迎来到我的主页</h1>
+<script>
+		var app = new Vue({
+			el:'#demo',//声明Vue.js管理的边界,当查找class时，只找第一个元素
+			data:{
+				name:'vinko'
+			}		//核心作用：存放显示在页面中的数据，需要是一个对象
+		});
+	</script>	
+</body>
+</html>

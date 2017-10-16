@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>延时显示延时隐藏</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		#div1{
+			width: 100px;
+			height: 100px;
+			background-color: #ccc;
+			position: relative;
+		}
+		#div2{
+			width: 200px;
+			height: 80px;
+			margin-top: 20px;
+			background-color: #ddd;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">div1</div>
+	<div id="div2">div2,使用了setTimeout和clearTimeout两个方法，显示和隐藏都延迟300ms</div>
+	<script>
+		window.onload=function(){
+			var oDiv1 = document.getElementById('div1');
+			var oDiv2 = document.getElementById('div2');
+			var timer = null;
+			var display = function(){
+				clearTimeout(timer);
+				setTimeout(function(){
+				oDiv2.style.display = 'block';
+				},300);
+			};
+
+			var hide = function(){
+				timer = setTimeout(function(){
+				oDiv2.style.display = 'none';
+			},300);
+			};
+			
+			oDiv1.onmouseover = display;
+			oDiv2.onmouseover = display;
+
+			oDiv1.onmouseout = hide;
+			oDiv2.onmouseout = hide;
+
+			// oDiv1.onclick = function(){
+			// 	setInterval(function(){
+			// 		alert('延时显示')
+			// 	},1000);
+			// }
+		}
+	</script>
+</body>
+
+</html>

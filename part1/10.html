@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>loading动画</title>
+	<style> 
+	*{margin: 0;padding: 0;}
+	div{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -100px;
+		margin-left: -50px;
+		background: red;
+		width: 100px;
+		height: 100px;
+		border-radius: 5px;
+		-webkit-animation: mymove 10s; /*设置mymove动画一个流程运行的时间*/
+		-webkit-animation-timing-function: linear; /*设置动画的过渡效果为匀速*/
+		-webkit-animation-iteration-count:3; /*设置动画重复的次数*/
+		-webkit-animation-direction:normal; /*设置动画重复时alternate反向播放，normal正向播放*/
+	}
+	@keyframes mymove{
+		0%{background: red;transform: rotateX(0deg); }
+		16%{background: orange;transform: rotateX(360deg); }
+
+		17%{background: orange;transform: rotateY(0deg); }
+		33%{background: yellow;transform: rotateY(360deg); }
+
+		34%{background: yellow;transform: rotateX(0deg); }
+		50%{background: green;transform: rotateX(360deg); }
+
+		51%{background: green;transform: rotateY(0deg); }
+		66%{background: #007fff;transform: rotateY(360deg); }
+
+		67%{background: #007fff;transform: rotateX(0deg); }
+		83%{background: blue;transform: rotateX(360deg); }
+
+		84%{background: blue;transform: rotateY(0deg); }
+		100%{background: #8b00ff;transform: rotateY(360deg);  }
+	}
+	</style>
+</head>
+<body>
+
+<p><b>注释：</b>本例在 Internet Explorer 中无效。</p>
+
+<div></div>
+
+</body>
+</html>

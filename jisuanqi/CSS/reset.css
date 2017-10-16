@@ -1,0 +1,23 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{
+	margin: 0;
+	padding: 0;
+}
+/*设置字体*/
+body{font-size: 12px;}
+/*清除图片边框*/
+img{border: none;}
+/*清除列表样式*/
+li{list-style: none;}
+/*清除轮廓*/
+input,select,textarea{outline: none;border: none;background: none;}
+/*不可调节文本框大小*/
+textarea{resize: none;}
+/*去除下划线*/
+a{text-decoration: none;color: #656565;}
+/*清除浮动*/
+.clearfix:after{content: "";display: block;clear: both;}
+.clearfix{zoom:1;}
+.fl{float: left;}
+.fr{float: right;}
+
+

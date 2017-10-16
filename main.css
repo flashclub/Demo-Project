@@ -1,0 +1,76 @@
+*{padding: 0;margin: 0;}
+body{
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+.overall{
+	width: 400px;
+	border: 1px solid #ADADAD;
+	border-radius: 5px;
+	margin: 30px auto;
+	padding: 20px 50px;
+}
+.overall p{
+	display: inline-block;
+	font-size: 26px;
+}
+.overall button{
+	background-color: #FFF;
+	font-family: "微软雅黑";
+}
+.overall li{
+	list-style: none;
+}
+.menu{	
+	width: 370px;
+	height: 50px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #53AAFF;
+	text-align: left;
+	border-style: none;
+	background-color: #FFF;
+}
+.list1{
+	display: none;
+	padding-left: 90px;
+}
+.list1 button{
+	background-color: #FFF;
+}
+.listItem{
+	width: 370px;
+	height: 50px;
+	margin-left: -20px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #53AAFF;
+	text-align: left;
+	border-style: none;
+	/*border: 1px solid #000;*/
+	/*background-color: #FFF;*/
+}
+.list1 a{
+	color: #53AAFF;
+	font-family: "微软雅黑";
+}
+
+.list1 a:link,.list1 a:visited,.list1 a:hover{
+	text-decoration: none;
+}
+.list1 a:hover{
+	color: #FFF;
+}
+.footer{
+	display: block;
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+	width: 500px;
+}
+.footer a:link{
+	text-decoration: none;
+	color: #000;
+}
+.footer a:hover{
+	text-decoration: underline;
+}

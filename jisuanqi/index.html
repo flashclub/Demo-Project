@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">			
+	<title>计算器示例</title>
+	<link rel="stylesheet" type="text/css" href="CSS/reset.css">
+	<link rel="stylesheet" type="text/css" href="CSS/main.css">
+</head>
+<body>
+
+<div class="shuziqu">
+	<div class="inputTxt">
+		<a href="http://www.1io0.com"><img src="images/logo.jpg" alt="logo"></a>
+		<input type="text" id="screenId" name="输入框"  >
+	</div>
+	
+	<dl class="anjian">
+		<dt>
+			<button value="7" id="7" onclick="acquire(this.id);"><img src="images/7.jpg" title="数字7" alt="数字7"></button>
+			<button value="8" id="8" onclick="acquire(this.id);"><img src="images/8.jpg" title="数字8" alt="数字8"></button>
+			<button value="9" id="9" onclick="acquire(this.id);"><img src="images/9.jpg" title="数字9" alt="数字9"></button>
+			<button value="" onclick="clearNum(this);"><img src="images/c.jpg" title="清除" alt="清除键"></button>
+		</dt>
+		<dd>
+			<button value="4" id="4" onclick="acquire(this.id);"><img src="images/4.jpg" title="数字4" alt="数4"></button>
+			<button value="5" id="5" onclick="acquire(this.id);"><img src="images/5.jpg" title="数字5" alt="数字5"></button>
+			<button value="6" id="6" onclick="acquire(this.id);"><img src="images/6.jpg" title="数字6" alt="数字6"></button>
+			<button value="-" id="-" onclick="acquire(this.id);"><img src="images/-.jpg" title="减号" alt="减号"></button>
+			<button value="/" id="/" onclick="acquire(this.id);"><img src="images/chu.jpg" title="除号" alt="除号"></button>
+		</dd>
+		<dd>
+			<button value="1" id="1" onclick="acquire(this.id);"><img src="images/1.jpg" title="数字1" alt="数字1"></button>
+			<button value="2" id="2" onclick="acquire(this.id);"><img src="images/2.jpg" title="数字2" alt="数字2"></button>
+			<button value="3" id="3" onclick="acquire(this.id);"><img src="images/3.jpg" title="数字3" alt="数字3"></button>
+			<button value="*" id="*" onclick="acquire(this.id);" style="margin-left: 105px;"><img src="images/x.jpg" title="乘以" alt="乘以"></button>
+		</dd>
+		<dd>
+			<button value="0" id="0" onclick="acquire(this.id);"><img src="images/0.jpg" title="数字0" alt="数字0"></button>
+			<button value="00" id="00" onclick="acquire(this.id); "><img src="images/00.jpg" title="数字00" alt="数字00"></button>
+			<button value="." id="." onclick="acquire(this.id);"><img src="images/dian.jpg" title="符号." alt="符号."></button>
+			<button value="+" id="+" onclick="acquire(this.id);" style="margin-top:-79px; margin-left: 10px;"><img src="images/plus.jpg" title="加号" alt="加号"  ></button>
+			<button value="=" id="=" onclick="eva(this);"><img src="images/=.jpg" title="等于" alt="数字7"></button>
+		</dd>
+	</dl>
+	<p class="footer">欢迎使用简易计算器 <a href="mailto:liangcl523@163.com">邮件联络？</a></p>
+
+</div>
+<div class="desc">
+	<dl>
+		<dt>功能</dt>
+		<dd>可以实现最基本的加减乘除运算，也支持小数运算</dd>
+		<dt>较示例程序创新点</dt>
+		<dd>计算器输入框默认为0，且按清除按键后显示为0</dd>
+		<dt>不足和已知bug</dt>
+		<dd>UI需要进一步优化</dd>
+		<dd>功能单一，没有括号不能进行复杂四则运算</dd>
+		<dd>除数为0时应出现提示，现在没有提示</dd>
+		<dd>零加、减、乘其他数时并不显示</dd>
+		<dt>总结</dt>
+		<dd>今天开始做计算器的小程序，从抠图，到html搭建，少量CSS样式编写，再到最后琢磨JavaScript代码。这个小应用花了1天时间，主要是js代码上面，一开始有思路，想用getAttribute和setAttribute作为输入框的值来显示数字，但是试了很多次发现不行，原因在于无法进行+=操作，后来在网上找示例，很简单就实现了这项操作,只用了2行代码，但是我不甘心，还是要弄明白到底是我没写对还是我的方法为何不行。现在计算器只有最基本的功能，甚至除法都有隐患，以后再完善吧或者添加一些其他功能。</dd>
+	</dl>
+</div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+<!-- 制作按键及样式 -->
+<!-- 首先将样式设置为普通计算器按键布局
+模拟计算器在按下按键时在计算器的屏幕上显示输出的数字 -->
+
+<!-- 编写JavaScript代码 -->
+<!-- 检测按键状态，当有按键触发时，如果是数字，在计算器屏幕上实时显示计算器数字，如果是运算符，则不显示。 -->
+<!-- 
+难点：1、如何实时获取计算器按键状态
+	2、将按键数值从右至左依次排列，每新增一个数字，则自动生成在右侧，其他原来数字向左挪一位
+	3、 -->

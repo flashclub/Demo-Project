@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加删除元素</title>
+	<script>
+		var arr = [1,2,3];
+		arr.push(4);//在数组尾部添加元素
+		alert(arr);
+		arr.pop();//从数组尾部删除元素
+		alert(arr);
+		arr.shift();//从数组头部删除元素
+		alert(arr);
+		arr.unshift(0);//从数组头部添加元素
+		alert(arr);
+		var arr2 = ['float','zindex','xy','absolute','blue','leo'];
+		arr2.sort();//按字母顺序排序
+		alert(arr2);
+		var arr3 = [11,234,118,45,85,1034]
+		arr3.sort();
+		alert(arr3)
+		arr3.sort(function(num1,num2) {
+			return num1-num2;
+		});
+		alert(arr3);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

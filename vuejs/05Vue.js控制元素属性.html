@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05Vue.js控制标签属性</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<a v-bind:href="hrefValue" id="demo">
+		<img v-bind:src="source" alt="动图1">
+	</a>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				hrefValue:'#',
+				source:'images/02.gif'
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: pink;
+}
+#btn{
+	width: 486px;
+	height: 40px;
+	margin: 0 auto;
+	text-align: left;
+	/*border: 1px solid #000;*/
+	line-height: 40px;
+}
+#btn button{
+	margin-right: 5px;
+}
+#btn #red{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 5px solid #FF0000;
+}
+#btn #green{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 5px solid #008000;
+	background-color: #008000;
+}
+#btn #black{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 5px solid #000;
+	background-color: #000;
+}
+
+#daohang{
+	height: 30px;
+	width: 486px;
+	margin: 0 auto;
+	background-color: red;
+	border: 1px solid #FFF;
+	line-height: 30px;
+}
+#daohang a{
+	display: inline-block;
+	float: left;
+	width: 80px;
+	text-align: center;
+	border-right: 1px solid #FFF;
+}
+#daohang a{
+	text-decoration: none;
+}
+#daohang a:link,a:visited,a:hover {
+	color: #FFF;
+}

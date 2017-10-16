@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js控制html</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+
+<div id="demo" v-html="msg"></div>
+	
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				msg:'<img src="images/01.gif">',
+			}
+		})
+	</script>
+</body>
+</html>

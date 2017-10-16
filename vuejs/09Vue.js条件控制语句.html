@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js条件控制语句</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="demo">
+	<template v-if="login">laughing,欢迎来到</template>
+		<!-- <p >laughing,欢迎来到</p> --> <!-- 用在权限管理页面，条件加载 -->
+	</div>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				login:true,//如果用户已登录，为true
+			}
+		})
+	</script>
+</body>
+</html>

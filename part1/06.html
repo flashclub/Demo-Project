@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>记住密码提示框</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+			font-family: "微软雅黑";
+		}
+		#box{
+			margin: 0 auto;
+			width: 220px;
+			height: 40px;
+			text-align: left;
+		}
+		.message{
+			display: none;
+			width: 200px;
+			height: 70px;
+			padding: 5px;
+			margin: -10px auto;
+			background: #FFF379;
+			text-align: left;
+			border: 1px solid #FFD14A;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<label><input type="checkbox" name=""/>两周内自动登录</label>
+		</div>
+		<p class="message" >为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</p>
+	
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var label = document.getElementsByTagName("label")[0];
+			var message = document.getElementsByTagName("p")[0];
+			label.onmouseover= function(){
+				message.style.display = "block";
+			}  
+			label.onmouseout= function(){
+				message.style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>

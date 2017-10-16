@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on绑定事件</title>
+	<script src="vue.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			list-style-type: none;
+		}
+		ul li {
+			line-height: 30px;
+			text-align: center;
+			border: 1px solid #000;
+			background-color: #ccc;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<ul id="demo" v-on:click>
+		<li v-on:click="clickme">单击事件</li>
+		<li v-on:dblclick="dblclickme">双击事件</li>
+		<li v-on:mouseenter="enterme()">鼠标移入事件</li>
+		<li @mouseleave="leaveme('pro')">鼠标移出事件</li>
+	</ul>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{},
+			methods:{
+				clickme:function() {
+					console.log('单击事件发生了...')
+				},
+				dblclickme:function() {
+					console.log('双击事件发生了...')
+				},
+				enterme:function() {
+					console.log('鼠标移入了')
+				},
+				leaveme:function(p) {
+					console.log('鼠标离开了',p)
+				},
+			}
+		});
+	</script>
+</body>
+</html>

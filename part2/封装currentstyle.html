@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<script>
+	//函数参数：元素，样式
+		function getStyle(obj,attr) {
+			if (obj.currentStyle) {
+				return obj.currentStyle[attr];
+			}else {
+				return getComputedStyle(obj,false)[attr];
+			}
+		}
+		
+		window.onload = function () {
+			var oDiv = document.getElementById('div1');
+			alert(getStyle(oDiv,'width'));
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

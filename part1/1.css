@@ -1,0 +1,13 @@
+div{
+	width: 300px;
+
+	margin: 100px auto;
+}
+input{
+	width: 200px;
+	height: 26px;
+	margin: 0 auto;
+}
+button{
+	height:30px;
+}

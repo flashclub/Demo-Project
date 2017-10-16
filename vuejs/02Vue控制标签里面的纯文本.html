@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>控制标签里面的纯文本</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<h1 id="demo" >今年是{{year}}年{{month}}月{{date}}日 星期{{day}}</h1>
+	
+	<script>
+		var app = new Vue({
+			el:'#demo',  	//vue管理的边界
+			data:{
+				year:new Date().getFullYear(),
+				month:new Date().getMonth()+1,
+				date:new Date().getDate(),
+				day: new Date().getDay(),//星期需要修改
+			},	//数据
+		})
+	</script>
+</body>
+</html>

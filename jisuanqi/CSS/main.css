@@ -1,0 +1,64 @@
+body{
+	background-color: #B6C1F7;
+	/*text-align: center;*/
+}
+.shuziqu{
+	margin: 15px auto;
+	width: 530px;
+	height: 600px;
+	padding-top: 20px;
+	border: 1px solid #FFFFFF;
+	background-color: #B6B6B6;
+}
+.inputTxt{	
+	width: 460px;
+	height: 80px;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+.inputTxt img{
+	float: left;
+}
+input{
+	float: right;
+	width: 250px;
+	height: 80px;
+	font-size:50px;
+	line-height: 50px;
+	font-weight: bold;
+	background-color:#E6E6E6; 
+	
+	text-align: right;
+	
+}
+.anjian{
+	background-color: #E6E6E6;
+	border: 1px solid #FFFFFF;
+	width: 480px;
+	margin: 50px auto;
+}
+
+button{
+	background-color: #FFF;
+	/*border: 1px solid #000;*/
+	height: 61px;
+	width: 70px;
+	padding: 0;
+	margin: 10px;
+}
+.desc{
+	margin: 0 auto;
+	width: 500px;
+
+}
+.desc dt,.desc dd{
+	font-size: 14px;
+	line-height: 20px
+}
+dt{
+	font-weight: bold;
+}
+.footer{
+	font-size: 16px;
+	padding-left: 20px;
+}

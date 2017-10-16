@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js模板中可以使用简单的JS表达式</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<img v-bind:src="'images/0'+num+'.gif'" v-bind:alt="'动图'+num">
+		<p v-text="'动图'+num"></p>
+		<p>{{num==1?'动图1':'动图2'}}</p>  <!-- 可以使用简单的JS表达式 -->
+	</div>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				num:'2',
+			}
+		})
+	</script>
+</body>
+</html>

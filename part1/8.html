@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>求出数组中所有数字的和</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			text-align: center;
+			font-family: '宋体';
+			font-size: 14px;
+		}
+		div{
+			margin: 20px auto;
+			width: 500px;
+			text-align: left;
+		}
+		input{
+			margin-right: 10px;
+			margin-bottom: 10px;
+			padding: 5px;
+		}
+		button{
+			padding: 0 10px;
+		}
+		.sum{
+			font-size: 30px;
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<table>
+			<input type="text" id="input" value="1,2,3,4,5,6,32332,1435,2111">输入数字求和，数字之间用英文','号分隔
+		</table>
+		<p><button>求和</button></p>
+		<strong class="sum"></strong>
+	</div>
+	<script type="text/javascript">
+		var myText = document.getElementById('input');
+		var myBtn = document.getElementsByTagName('button')[0];
+		var mySum = document.getElementsByTagName('strong')[0];
+		// 检测输入框，在按键被松开时执行替换
+		myText.onkeyup = function(){
+			this.value = this.value.replace(/[^\d,]/,'');
+			console.log(myText.value);
+		}
+		// 按键按下时执行，避免长时间按某按键不抬起时输入字符
+		myText.onkeydown = function(){
+			this.value = this.value.replace(/[^\d,]/,'');
+			console.log(myText.value);
+		}
+		//当按键按下时，将input值相加
+		myBtn.onclick = function(){
+			var sum = 0;
+			var myTxt = document.getElementsByTagName('input')[0].value.split(',');
+			console.log(myTxt);
+			for(var i in myTxt){
+				sum += parseInt(myTxt[i])
+			}
+			mySum.innerHTML = sum;
+			console.log(mySum.innerHTML);
+		}
+
+	</script>
+</body>
+</html>

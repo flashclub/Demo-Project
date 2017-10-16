@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11Vue.js_v-for</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	最受欢迎歌手榜
+	<ul id="demo">
+		<li v-for="(singer,index) in singers">
+			{{singer.num}}{{singer.name}} (索引值为{{index}})
+		</li>
+	</ul>
+	<script>
+		var app = new Vue({
+			el:'#demo',
+			data:{
+				singers:[
+					{num:'1',name:'陈奕迅',},
+					{num:'2',name:'王菲'},
+				]
+
+			}
+		})
+	</script>
+</body>
+</html>
