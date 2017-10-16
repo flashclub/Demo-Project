@@ -1,48 +1,63 @@
-function btnDisp(whitchbtn){
-		whitchbtn.style.backgroundColor= "red";
-		whitchbtn.style.color = "#FFF";
-		whitchbtn.style.paddingLeft = "40px";
-		whitchbtn.style.borderRadius = "5px";
+// 鼠标悬停时改变样式
+function btnDisp(){
+	var oBtn = document.getElementsByTagName('button');
+	for (var i = 0; i < oBtn.length; i++) {
+		oBtn[i].onmouseover = function() {
+			this.style.backgroundColor= "red";
+			this.style.color = "#FFF";
+			this.style.paddingLeft = "40px";
+			this.style.borderRadius = "5px";	
+		}
+	}
+		
 }
+// 鼠标移出时恢复样式
 function btnNor(){
-	var button = document.getElementsByTagName("button");
-	for (var i = 0; i < button.length; i++) {
-		button[i].style.backgroundColor= "#FFF";
-
-		button[i].style.color = "#53AAFF";
-		button[i].style.paddingLeft = "0px";
+	var oBtn = document.getElementsByTagName("button");
+	for (var i = 0; i < oBtn.length; i++) {
+		oBtn[i].onmouseout = function() {
+			this.style.backgroundColor= "#FFF";
+			this.style.color = "#53AAFF";
+			this.style.paddingLeft = "0px";
+		}
 	}
 }
-
-var e = 0;
-function get_nextSibling(n){
-	var x = n.nextSibling;
-	while(x && x.nodeType!=1){
-		x = x.nextSibling;
+function listDisp(){	
+	var oMenuAll = document.getElementsByClassName('menu');// 获取菜单列数
+	for (var i = 0; i < oMenuAll.length; i++) {			
+		oMenuAll[i].onclick = function() {					//	例遍菜单
+			var oDiv = document.getElementsByClassName("list1")[this.id] ;//获取当前菜单所将显示的DIV
+			var oAllDiv = document.getElementsByClassName("list1");		//获取所有菜单的DIV
+			if (getStyle(oDiv,"display") =='none') {					//如果当前菜单DIV是隐藏的
+				for (var j = 0; j < oAllDiv.length; j++) {				//将所有菜单的DIV设置隐藏
+					css(oAllDiv[j],"display","none");
+				}
+				oDiv.style.display="block";//将当前菜单DIV设置为显示					
+			}
+			else{				
+				oDiv.style.display="none";								//否则将当前菜单设置为隐藏
+			}	
+		}
 	}
-	return x;
 }
-
-function listDisp(thebtn){
-	var id = thebtn.getAttribute("id");
-	var z = document.getElementsByClassName("menu")[id];
-	var y = get_nextSibling(z);
-	console.log(id);
-	console.log(z);
-	console.log(y);
-		if (e == 0) {
-		y.style.display = "block";
-		e = 1;	
+function getStyle(obj,attr) {		//获取CSS属性并兼容IE等浏览器
+	if (obj.currentStyle) {
+		return obj.currentStyle[attr];//currentStyle只能在IE中使用
+	}else {
+		return getComputedStyle(obj,false)[attr];
 	}
-		else{	
-		y.style.display = "none";
-		e = 0;
+}
+function css() {						//判断CSS参数的个数不同实现获取和修改功能
+	if (arguments.length==2) {
+		return getStyle(arguments[0],arguments[1]);
+	}else{
+		arguments[0].style[arguments[1]]=arguments[2];
 	}
-	console.log(e);
-}		
+}
+		
 
 
-function addLoadEvent(func){
+function addLoadEvent(func){						//初始化函数
 	var oldonload = window.onload;
 	if (typeof window.onload != 'function') {
 		window.onload = func;
@@ -53,42 +68,7 @@ function addLoadEvent(func){
 		}
 	}
 }
-
+addLoadEvent(listDisp);
+addLoadEvent(btnDisp);
+addLoadEvent(btnNor);	
 	
-	
-	
-		
-	
-
-
-// function list(){
-// 	var e = 0;
-// 	if(e==0){
-// 		执行语句1;
-// 		e=1;
-// 	}
-// 	else{
-// 		执行语句2;
-// 		e=0;
-// 	}
-// }
-
-
-// 默认情况下，list为隐藏
-// 事件1：当鼠标移动到menu上时，menu背景颜色改变，文本内容向右平移，
-// 事件2：当鼠标移出时button样式返回默认样式，这里我想直接获取CSS样式表的样式，发现不行，具体解释参照这个链接
-// http://www.cnblogs.com/heshan1992/p/5401460.html
-
-// 事件3：当鼠标点击menu时，list显示并弹出
-
-// bug记录：
-// 1.先是出现 index.html:9 Uncaught ReferenceError: listDisp is not defined
-// at HTMLButtonElement.onmouseover (index.html:9)
-// 然后看第九行，说我函数未定义，各种修改js，怎么也找不到毛病，再一看，原来没引入js，引入js。
-// 2.然后又报错，说 Uncaught SyntaxError: Invalid or unexpected token，然后又是找js毛病，结果
-// 找不到，然后点击调试监控的js文件，才知道报错位置是注释未加双斜杠
-// 3.任何函数名后面不加（），所有函数都会报错 index.html:10 Uncaught ReferenceError: btnNor is not defined 类似这样的提示信息
-// 4.在listDisp编写时想循环执行if和else，但是每次只执行if不执行else，后来求助朋友，一语道破。很简单的错误：我把var e=0;放在了函数第一行而不是外面
-// 每次调用函数都先执行 var e=0;else当然没机会执行
-// 5.在写好一个btn之后想扩展成多个btn，可是因为我调用的是 document.getElementsByTagName和 document.getElementsByClassName，在结构中class
-// 又全都一样，造成操作一个按键，多个按键也一并操纵了，所以继续修改
