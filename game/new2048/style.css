@@ -11,6 +11,9 @@ header h1 {
 	font-weight: bold;
 	margin: 0 auto;
 }
+header a {
+	cursor: pointer;
+}
 
 header #new_game_button {
 	display: block;
